@@ -36,7 +36,13 @@
     </div>
 
     <x-head.page-wire class="ml-5 mt-5">Input</x-head.page-wire>
-    <div>Нужны модели для списков</div>
+    <div class="flex items-center space-x-8">
+        <x-input.label>x-input.label</x-input.label>
+        <x-input.switch>x-input.switch</x-input.switch>
+        <x-input.textarea>x-input.textarea</x-input.textarea>
+        <x-input.text value="x-input.text"></x-input.text>
+
+        <div class="text-red-600 font-bold">Нужны модели для списков</div>
 
 
     </div>
