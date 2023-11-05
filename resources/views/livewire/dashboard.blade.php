@@ -86,10 +86,10 @@
     <div class="flex items-center space-x-8">
         <x-input.label>x-input.label</x-input.label>
         <x-input.select :items="$itemsSelect" noneTxt="x-input.select" />
-        <x-input.switch>x-input.switch</x-input.switch>
         <x-input.textarea>x-input.textarea</x-input.textarea>
         <x-input.text value="x-input.text"></x-input.text>
     </div>
+    <x-input.switch />x-input.switch
 
     <x-head.h1 class="ml-5 mt-5">Table</x-head.h1>
                  <x-table>
