@@ -1,12 +1,12 @@
 <div>
     <div class="p-5">
-    <x-head.page-wire>Components</x-head.page-wire>
-    <x-head.page-wire class="ml-5">Head</x-head.page-wire>
-        <x-head.page-wire>x-head.page-wire</x-head.page-wire>
+    <x-head.h1>Components</x-head.h1>
+    <x-head.h1 class="ml-5">Head</x-head.h1>
+        <x-head.h1>x-head.h1</x-head.h1>
         <x-head.h2>x-head.h2</x-head.h2>
         <x-head.h3>x-head.h3</x-head.h3>
 
-    <x-head.page-wire class="ml-5 mt-5">Modal wire</x-head.page-wire>
+    <x-head.h1 class="ml-5 mt-5">Modal wire</x-head.h1>
     <div class="flex">
         <x-button.primary wire:click="ShowModalWire">x-modal-wire</x-button.primary>
         <x-modal-wire wire:model="modalWire"><div class="p-10">Пустой div всплывающего окна</div></x-modal-wire>
@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <x-head.page-wire class="ml-5 mt-5">Sidebar</x-head.page-wire>
+    <x-head.h1 class="ml-5 mt-5">Sidebar</x-head.h1>
     <div>
         <x-button.primary wire:click="ShowSidebar">x-sidebar</x-button.primary>
         <x-sidebar wire:model="sidebar">                
@@ -63,7 +63,7 @@
         </x-sidebar.right>
     </div>
  
-    <x-head.page-wire class="ml-5 mt-5">Button</x-head.page-wire>
+    <x-head.h1 class="ml-5 mt-5">Button</x-head.h1>
     <div class="flex items-center space-x-2">
         <x-button.create>x-button.create</x-button.create>
         <x-button.danger>x-button.danger</x-button.danger>
@@ -82,7 +82,7 @@
         <x-button.text-edit>x-button.text-edit</x-button.text-edit>
     </div>
 
-    <x-head.page-wire class="ml-5 mt-5">Input</x-head.page-wire>
+    <x-head.h1 class="ml-5 mt-5">Input</x-head.h1>
     <div class="flex items-center space-x-8">
         <x-input.label>x-input.label</x-input.label>
         <x-input.select :items="$itemsSelect" noneTxt="x-input.select" />
@@ -91,7 +91,7 @@
         <x-input.text value="x-input.text"></x-input.text>
     </div>
 
-    <x-head.page-wire class="ml-5 mt-5">Table</x-head.page-wire>
+    <x-head.h1 class="ml-5 mt-5">Table</x-head.h1>
                  <x-table>
                     <x-slot name="header">
                         <x-table.head rowspan=2>id</x-table.head>
@@ -192,6 +192,6 @@
                         </x-table.row>
                     </x-table>
 
-    <x-head.page-wire class="ml-5 mt-5">Timetab ?</x-head.page-wire>
+    <x-head.h1 class="ml-5 mt-5">Timetab ?</x-head.h1>
 
 </div>
