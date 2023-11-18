@@ -91,6 +91,23 @@
     </div>
     <x-input.switch />x-input.switch
 
+    <x-head.h1 class="ml-5 mt-5">Tooltip</x-head.h1>
+        @php
+            $percent = 100;
+            $percent_class = 'bg-green-600 text-white';
+            if ($percent<80) $percent_class = 'bg-yellow-300';
+            if ($percent<40) $percent_class = 'bg-red-600 text-white';
+        @endphp
+        <div class="flex">
+            <x-tooltip.absolute-bottom class="px-2 {{ $percent_class }}">
+                x-tooltip.absolute-bottom slot
+                <x-slot name='tooltip'>
+                    slot tooltip 
+                </x-slot>   
+            </x-tooltip.absolute-bottom>
+        </div> 
+
+
     <x-head.h1 class="ml-5 mt-5">Table</x-head.h1>
                  <x-table>
                     <x-slot name="header">
