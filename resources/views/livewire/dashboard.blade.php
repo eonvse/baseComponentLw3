@@ -102,9 +102,16 @@
             <x-tooltip.absolute-bottom class="px-2 {{ $percent_class }}">
                 x-tooltip.absolute-bottom slot
                 <x-slot name='tooltip'>
-                    slot tooltip 
+                    absolute-bottom tooltip 
                 </x-slot>   
             </x-tooltip.absolute-bottom>
+            <x-tooltip.bottom class="px-2">
+                x-tooltip.bottom slot
+                <x-slot name='tooltip'>
+                    <div>x-tooltip.bottom x-slot name='tooltip' tooltip</div>
+                    <div>dfgdfkgjlkdfghdfhgljksdfglsdfgglhsdflkghdflkghldfg</div>
+                </x-slot>   
+            </x-tooltip.bottom>
         </div> 
 
 
