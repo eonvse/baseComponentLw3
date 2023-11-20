@@ -13,6 +13,8 @@ class Dashboard extends Component
 
     public $search, $sortField, $sortDirection;
 
+    public $divEditable, $showDivEditable;
+
     public function mount()
     {
         $this->modalWire = false;
@@ -27,6 +29,9 @@ class Dashboard extends Component
             ['id'=>2,'name'=>'input.select-color'],
             ['id'=>3,'name'=>'input.select-user'],
         );
+
+        $this->divEditable='x-input.div-editable props-editable';
+        $this->showDivEditable=false;
 
     }
 
@@ -89,6 +94,11 @@ class Dashboard extends Component
     public function closeSidebarRight()
     {
         $this->sidebarRight=false;
+    }
+
+    public function editDiv()
+    {
+        $this->showDivEditable = !$this->showDivEditable;
     }
 
     //------------------------------------------------    
