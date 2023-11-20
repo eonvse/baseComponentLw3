@@ -34,11 +34,13 @@
                         </div>                            
                     </x-slot>
                 </x-modal-wire.dialog>
-                <x-button.create wire:click="ShowModalWireDropdown">x-modal-wire.dropdown</x-button.create>
-                <x-modal-wire.dropdown wire:model="modalWireDropdown" maxWidth="sm">
-                    SLOT
-                    <x-button.secondary @click="show = false" wire:click="closeModalWireDropdown">Закрыть</x-button.secondary>
-                </x-modal-wire.dropdown>
+                <div>
+                    <x-button.create wire:click="ShowModalWireDropdown">x-modal-wire.dropdown</x-button.create>
+                    <x-modal-wire.dropdown wire:model="modalWireDropdown" maxWidth="sm">
+                        SLOT
+                        <x-button.secondary @click="show = false" wire:click="closeModalWireDropdown">Закрыть</x-button.secondary>
+                    </x-modal-wire.dropdown>
+                </div>
                 <div>
                     <x-button.create wire:click="ShowModalWireInline">x-modal-wire.inline</x-button.create>
                     <x-modal-wire.inline wire:model="modalWireInline" maxWidth="sm">
