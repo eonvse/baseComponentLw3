@@ -1,11 +1,17 @@
 <div>
     <div class="p-5">
     <x-head.h1>Components</x-head.h1>
+<!-- 
+----------------------Head------------------------------
+-->
     <x-head.h1 class="ml-5">Head</x-head.h1>
         <x-head.h1>x-head.h1</x-head.h1>
         <x-head.h2>x-head.h2</x-head.h2>
         <x-head.h3>x-head.h3</x-head.h3>
 
+<!-- 
+----------------------Modal wire------------------------------
+-->
     <x-head.h1 class="ml-5 mt-5">Modal wire</x-head.h1>
     <div class="flex">
         <x-button.primary wire:click="ShowModalWire">x-modal-wire</x-button.primary>
@@ -44,6 +50,10 @@
         </div>
     </div>
 
+<!-- 
+----------------------Sidebar------------------------------
+-->
+
     <x-head.h1 class="ml-5 mt-5">Sidebar</x-head.h1>
     <div>
         <x-button.primary wire:click="ShowSidebar">x-sidebar</x-button.primary>
@@ -62,24 +72,56 @@
             </div>
         </x-sidebar.right>
     </div>
- 
+
+<!-- 
+----------------------Button------------------------------
+-->
     <x-head.h1 class="ml-5 mt-5">Button</x-head.h1>
     <div class="flex items-center space-x-2">
+        <x-tooltip.bottom>
+            <x-button.dark-mode>x-button.dark-mode</x-button.dark-mode>
+            <x-slot name="tooltip">x-button.dark-mode</x-slot>
+        </x-tooltip.bottom>
         <x-button.create>x-button.create</x-button.create>
-        <x-button.danger>x-button.danger</x-button.danger>
-        <x-button.dark-mode> x-button.dark-mode</x-button.dark-mode>
-        <x-button.edit>??? icon ??? x-button.edit ????</x-button.edit>?
-        <x-button.icon-cancel> x-button.icon-cancel</x-button.icon-cancel>
-        <x-button.icon-del> x-button.icon-del</x-button.icon-del>
-        <x-button.icon-edit> x-button.icon-edit</x-button.icon-edit>
-        <x-button.icon-minus> x-button.icon-minus</x-button.icon-minus>
-        <x-button.icon-ok> x-button.icon-ok</x-button.icon-ok>
-        <x-button.icon-plus> x-button.icon-plus</x-button.icon-plus>
-        <x-button.primary> x-button.primary</x-button.primary>
-        <x-button.radio> x-button.radio</x-button.radio>
         <x-button.secondary>x-button.secondary</x-button.secondary>
+        <x-button.primary>x-button.primary</x-button.primary>
+        <x-button.danger>x-button.danger</x-button.danger>
         <x-button.text-cancel>x-button.text-cancel</x-button.text-cancel>
         <x-button.text-edit>x-button.text-edit</x-button.text-edit>
+    </div>
+    <div class="flex items-center content-center space-x-2">
+        <x-tooltip.bottom class="">
+            <x-button.edit />?
+            <x-slot name="tooltip">?? icon ??? x-button.edit ????</x-slot>
+        </x-tooltip.bottom>
+        <x-tooltip.bottom class="">
+            <x-button.icon-edit />
+            <x-slot name="tooltip">x-button.icon-edit</x-slot>
+        </x-tooltip.bottom>
+        <x-tooltip.bottom class="">
+            <x-button.icon-del />
+            <x-slot name="tooltip">x-button.icon-del</x-slot>
+        </x-tooltip.bottom>
+        <x-tooltip.bottom class="">
+            <x-button.icon-plus />
+            <x-slot name="tooltip">x-button.icon-plus</x-slot>
+        </x-tooltip.bottom>
+        <x-tooltip.bottom class="">
+            <x-button.icon-minus />
+            <x-slot name="tooltip">x-button.icon-minus</x-slot>
+        </x-tooltip.bottom>
+        <x-tooltip.bottom class="">
+            <x-button.icon-ok />
+            <x-slot name="tooltip">x-button.icon-ok</x-slot>
+        </x-tooltip.bottom>
+        <x-tooltip.bottom class="">
+            <x-button.icon-cancel />
+            <x-slot name="tooltip">x-button.icon-cancel</x-slot>
+        </x-tooltip.bottom>
+        <x-tooltip.bottom class="">
+            <x-button.radio />
+            <x-slot name="tooltip">x-button.radio</x-slot>
+        </x-tooltip.bottom>
     </div>
 
     <x-head.h1 class="ml-5 mt-5">Input</x-head.h1>
@@ -90,7 +132,9 @@
         <x-input.text value="x-input.text"></x-input.text>
     </div>
     <x-input.switch />x-input.switch
-
+<!-- 
+----------------------Tooltip------------------------------
+-->
     <x-head.h1 class="ml-5 mt-5">Tooltip</x-head.h1>
         @php
             $percent = 100;
@@ -112,9 +156,19 @@
                     <div>dfgdfkgjlkdfghdfhgljksdfglsdfgglhsdflkghdflkghldfg</div>
                 </x-slot>   
             </x-tooltip.bottom>
+            <x-tooltip.top class="px-2" translateY='two'>
+                x-tooltip.top slot
+                <x-slot name='tooltip'>
+                    <div>x-tooltip.top x-slot name='tooltip' tooltip</div>
+                    <div>dfgdfkgjlkdfghdfhgljksdfglsdfgglhsdflkghdflkghldfg</div>
+                </x-slot>   
+            </x-tooltip.top>
+
         </div> 
 
-
+<!-- 
+----------------------Table------------------------------
+-->
     <x-head.h1 class="ml-5 mt-5">Table</x-head.h1>
                  <x-table>
                     <x-slot name="header">
@@ -216,6 +270,9 @@
                         </x-table.row>
                     </x-table>
 
+<!-- 
+----------------------Timetab------------------------------
+-->
     <x-head.h1 class="ml-5 mt-5">Timetab ?</x-head.h1>
 
 </div>
