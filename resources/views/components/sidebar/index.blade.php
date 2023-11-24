@@ -19,7 +19,7 @@ $maxWidth = [
     x-on:keydown.escape.window="show = false"
     x-show="show"
     id="{{ $id }}"
-    class="flex items-center justify-center fixed inset-0 overflow-y-auto z-50"
+    class="flex items-center justify-center fixed inset-0 overflow-y-auto z-[100]"
     style="display: none;"
 >
     <div x-show="show" class="fixed inset-0 transform transition-all" x-on:click="show = false" x-transition:enter="ease-out duration-300"
@@ -31,7 +31,7 @@ $maxWidth = [
         <div class="absolute inset-0 bg-gray-500 opacity-50"></div>
     </div>
 
-    <div x-show="show" class="bg-white absolute top-0 left-1 h-screen overflow-hidden transform transition-all sm:w-full {{ $maxWidth }} dark:bg-gray-500"
+    <div x-show="show" class="bg-white absolute top-0 left-0 h-screen overflow-hidden transform transition-all sm:w-full {{ $maxWidth }} dark:bg-gray-500"
                     x-trap.inert.noscroll="show"
                     x-transition:enter="ease-in-out duration-500"
                     x-transition:enter-start="opacity-0 -translate-x-full"
