@@ -147,7 +147,7 @@
                 </x-input.div-editable>
             </div>
         </div>
-
+    </div>
 <!-- 
 ----------------------Tooltip------------------------------
 -->
@@ -159,13 +159,19 @@
                 if ($percent<80) $percent_class = 'bg-yellow-300';
                 if ($percent<40) $percent_class = 'bg-red-600 text-white';
             @endphp
-            <div class="flex">
+            <div class="flex mx-5 space-x-2">
                 <x-tooltip.absolute-bottom class="px-2 {{ $percent_class }}">
                     x-tooltip.absolute-bottom slot
                     <x-slot name='tooltip'>
                         absolute-bottom tooltip 
                     </x-slot>   
                 </x-tooltip.absolute-bottom>
+                <x-tooltip.absolute-right class="px-2 {{ $percent_class }}">
+                    x-tooltip.absolute-right slot
+                    <x-slot name='tooltip'>
+                        absolute-right tooltip 
+                    </x-slot>   
+                </x-tooltip.absolute-right>
                 <x-tooltip.bottom class="px-2">
                     x-tooltip.bottom slot
                     <x-slot name='tooltip'>
@@ -180,10 +186,15 @@
                         <div>dfgdfkgjlkdfghdfhgljksdfglsdfgglhsdflkghdflkghldfg</div>
                     </x-slot>   
                 </x-tooltip.top>
-    
+                <x-tooltip.bottom-translate-x class="px-2" translateX="50%">
+                    x-tooltip.bottom-translate-x slot
+                    <x-slot name='tooltip'>
+                        bottom-translate-x translateX="50%" tooltip 
+                    </x-slot>   
+                </x-tooltip.bottom-translate-x>    
             </div> 
         </div>
-</div>
+
 <!-- 
 ----------------------Table------------------------------
 -->
