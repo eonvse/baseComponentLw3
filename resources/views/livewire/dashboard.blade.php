@@ -1,4 +1,8 @@
 <div>
+    <div class="fixed right-0 top-0">
+        <x-button.dark-mode-wire />
+    </div>
+
     <x-head.h1>Components</x-head.h1>
     <div class="grid grid-cols-3 space-x-10 px-5">
 <!-- 
