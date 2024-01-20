@@ -9,7 +9,7 @@
 ----------------------Head------------------------------
 -->
         <div>
-            <x-head.h1>Head</x-head.h1>
+            <x-head.h2>Head</x-head.h2>
             <x-head.h1>x-head.h1</x-head.h1>
             <x-head.h2>x-head.h2</x-head.h2>
             <x-head.h3>x-head.h3</x-head.h3>
@@ -19,7 +19,7 @@
 ----------------------Modal wire------------------------------
 -->
         <div>
-            <x-head.h1>Modal wire</x-head.h1>
+            <x-head.h2>Modal wire</x-head.h2>
             <div class="flex flex-col space-y-2">
                 <x-button.primary wire:click="ShowModalWire">x-modal-wire</x-button.primary>
                 <x-modal-wire wire:model="modalWire"><div class="p-10">Пустой div всплывающего окна</div></x-modal-wire>
@@ -60,7 +60,7 @@
 ----------------------Sidebar------------------------------
 -->
         <div>
-            <x-head.h1>Sidebar</x-head.h1>
+            <x-head.h2>Sidebar</x-head.h2>
             <div>
                 <x-button.primary wire:click="ShowSidebar">x-sidebar</x-button.primary>
                 <x-sidebar wire:model="sidebar">                
@@ -82,21 +82,29 @@
         </div>
     </div>
 
+    <div class="grid grid-cols-3 space-x-10 px-5 mt-5">
+<!-- 
+----------------------Link------------------------------
+-->
+        <div>
+            <x-head.h2>Link</x-head.h2>
+            <x-link.a>x-link.a</x-link.a>
+        </div>
 <!-- 
 ----------------------Button------------------------------
--->
-    <div class="grid grid-cols-2 space-x-10 px-5 mt-5">
-        <div>
-            <div class="flex flex-wrap items-center space-y-2 space-x-2">
-                <x-head.h1 class="basis-full ml-5 mt-5">Button</x-head.h1>
-                <x-button.create>x-button.create</x-button.create>
-                <x-button.secondary>x-button.secondary</x-button.secondary>
-                <x-button.primary>x-button.primary</x-button.primary>
-                <x-button.danger>x-button.danger</x-button.danger>
-                <x-button.text-cancel>x-button.text-cancel</x-button.text-cancel>
-                <x-button.text-edit>x-button.text-edit</x-button.text-edit>
+-->        <div>
+            <x-head.h2 class="text-center basis-full ml-5 mt-5">Button</x-head.h2>
+            <div class="flex">
+            <div class="flex flex-col flex-wrap items-center space-y-2 space-x-2">
+                
+                <x-button.create class="w-full">x-button.create</x-button.create>
+                <x-button.secondary class="w-full">x-button.secondary</x-button.secondary>
+                <x-button.primary class="w-full">x-button.primary</x-button.primary>
+                <x-button.danger class="w-full">x-button.danger</x-button.danger>
+                <x-button.text-cancel class="w-full">x-button.text-cancel</x-button.text-cancel>
+                <x-button.text-edit class="w-full">x-button.text-edit</x-button.text-edit>
             </div>
-            <div class="flex items-center content-center space-x-2 mt-3">
+            <div class="flex flex-wrap items-center content-center space-x-2 px-2">
                 <x-tooltip.bottom>
                     <x-button.dark-mode />
                     <x-slot name="tooltip">x-button.dark-mode</x-slot>
@@ -134,10 +142,11 @@
                     <x-slot name="tooltip">x-button.radio</x-slot>
                 </x-tooltip.bottom>
             </div>
+            </div>
         </div>
         <div>
             <div class="flex flex-wrap items-center space-y-2 mb-2">
-                <x-head.h1 class="ml-5 mt-5 basis-full">Input</x-head.h1>
+                <x-head.h2 class="ml-5 mt-5 basis-full">Input</x-head.h2>
                 <x-input.label>x-input.label</x-input.label>
                 <x-input.select :items="$itemsSelect" noneTxt="x-input.select" />
                 <x-input.textarea>x-input.textarea</x-input.textarea>
@@ -156,7 +165,7 @@
 ----------------------Tooltip------------------------------
 -->
         <div>
-            <x-head.h1 class="ml-5 mt-5">Tooltip</x-head.h1>
+            <x-head.h2 class="ml-5 mt-5">Tooltip</x-head.h2>
             @php
                 $percent = 100;
                 $percent_class = 'bg-green-600 text-white';
@@ -202,7 +211,7 @@
 <!-- 
 ----------------------Table------------------------------
 -->
-    <x-head.h1 class="ml-5 mt-5">Table</x-head.h1>
+    <x-head.h2 class="ml-5 mt-5">Table</x-head.h2>
                  <x-table>
                     <x-slot name="header">
                         <x-table.head rowspan=2>id</x-table.head>
@@ -306,5 +315,5 @@
 <!-- 
 ----------------------Timetab------------------------------
 -->
-    <x-head.h1 class="ml-5 mt-5">Timetab ?</x-head.h1>
+    <x-head.h2 class="ml-5 mt-5">Timetab ?</x-head.h2>
 

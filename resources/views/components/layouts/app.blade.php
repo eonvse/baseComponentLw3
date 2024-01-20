@@ -24,7 +24,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
         @vite(['resources/css/app.css'])
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen overflow bg-gray-100 dark:bg-gray-900">
+        <div class="min-h-screen overflow bg-gray-100 dark:bg-gray-900 p-2">
             <!-- Page Content -->
             <main>
                 {{ $slot }}
