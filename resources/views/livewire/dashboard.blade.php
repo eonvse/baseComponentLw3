@@ -86,9 +86,25 @@
 <!-- 
 ----------------------Link------------------------------
 -->
-        <div>
+        <div class="flex flex-col relative">
             <x-head.h2>Link</x-head.h2>
-            <x-link.a>x-link.a</x-link.a>
+            <x-link.a class="py-2">x-link.a</x-link.a>
+            <x-link.create>x-link.create</x-link.create>
+            <div class="flex space-x-3">
+                <x-tooltip.absolute-bottom>
+                    <x-link.icon-del />
+                    <x-slot name="tooltip">x-link.icon-del</x-slot>
+                </x-tooltip.absolute-bottom>
+                <x-tooltip.absolute-bottom>
+                    <x-link.icon-edit />
+                    <x-slot name="tooltip">x-link.icon-edit</x-slot>
+                </x-tooltip.absolute-bottom>
+                <x-tooltip.absolute-bottom>
+                    <x-link.icon-show />
+                    <x-slot name="tooltip">x-link.icon-show</x-slot>
+                </x-tooltip.absolute-bottom>
+            </div>
+            <x-link.table-cell>x-link.table-cell</x-link.table-cell>
         </div>
 <!-- 
 ----------------------Button------------------------------
@@ -104,43 +120,39 @@
                 <x-button.text-cancel class="w-full">x-button.text-cancel</x-button.text-cancel>
                 <x-button.text-edit class="w-full">x-button.text-edit</x-button.text-edit>
             </div>
-            <div class="flex flex-wrap items-center content-center space-x-2 px-2">
-                <x-tooltip.bottom>
+            <div class="flex flex-wrap items-center content-center space-x-2 px-2 relative">
+                <x-tooltip.absolute-bottom>
                     <x-button.dark-mode />
                     <x-slot name="tooltip">x-button.dark-mode</x-slot>
-                </x-tooltip.bottom>
-                <x-tooltip.bottom class="">
-                    <x-button.edit />?
-                    <x-slot name="tooltip">?? icon ??? x-button.edit ????</x-slot>
-                </x-tooltip.bottom>
-                <x-tooltip.bottom class="">
+                </x-tooltip.absolute-bottom>
+                <x-tooltip.absolute-bottom class="">
                     <x-button.icon-edit />
                     <x-slot name="tooltip">x-button.icon-edit</x-slot>
-                </x-tooltip.bottom>
-                <x-tooltip.bottom class="">
+                </x-tooltip.absolute-bottom>
+                <x-tooltip.absolute-bottom class="">
                     <x-button.icon-del />
                     <x-slot name="tooltip">x-button.icon-del</x-slot>
-                </x-tooltip.bottom>
-                <x-tooltip.bottom class="">
+                </x-tooltip.absolute-bottom>
+                <x-tooltip.absolute-bottom class="">
                     <x-button.icon-plus />
                     <x-slot name="tooltip">x-button.icon-plus</x-slot>
-                </x-tooltip.bottom>
-                <x-tooltip.bottom class="">
+                </x-tooltip.absolute-bottom>
+                <x-tooltip.absolute-bottom class="">
                     <x-button.icon-minus />
                     <x-slot name="tooltip">x-button.icon-minus</x-slot>
-                </x-tooltip.bottom>
-                <x-tooltip.bottom class="">
+                </x-tooltip.absolute-bottom>
+                <x-tooltip.absolute-bottom class="">
                     <x-button.icon-ok />
                     <x-slot name="tooltip">x-button.icon-ok</x-slot>
-                </x-tooltip.bottom>
-                <x-tooltip.bottom class="">
+                </x-tooltip.absolute-bottom>
+                <x-tooltip.absolute-bottom class="">
                     <x-button.icon-cancel />
                     <x-slot name="tooltip">x-button.icon-cancel</x-slot>
-                </x-tooltip.bottom>
-                <x-tooltip.bottom class="">
+                </x-tooltip.absolute-bottom>
+                <x-tooltip.absolute-bottom class="">
                     <x-button.radio />
                     <x-slot name="tooltip">x-button.radio</x-slot>
-                </x-tooltip.bottom>
+                </x-tooltip.absolute-bottom>
             </div>
             </div>
         </div>
@@ -150,7 +162,10 @@
                 <x-input.label>x-input.label</x-input.label>
                 <x-input.select :items="$itemsSelect" noneTxt="x-input.select" />
                 <x-input.textarea>x-input.textarea</x-input.textarea>
-                <x-input.text value="x-input.text"></x-input.text>
+                <div class="relative">
+                    <x-input.text :value="$inputText" wire:model="inputText" /> <!-- в проектах используется wire.model -->
+                    <x-button.icon-clear class="absolute top-0 right-0" title="{{ __('Clear field') }}" wire:click="clearField('inputText')" />
+                </div>
             </div>
             <x-input.switch />x-input.switch
             <div class="flex items-center content-center space-x-2 bg-blue-100 p-2">
@@ -161,9 +176,11 @@
             </div>
         </div>
     </div>
-<!-- 
-----------------------Tooltip------------------------------
--->
+
+    <div class="grid grid-cols-2">
+        <!-- 
+        ----------------------Tooltip------------------------------
+        -->
         <div>
             <x-head.h2 class="ml-5 mt-5">Tooltip</x-head.h2>
             @php
@@ -172,7 +189,7 @@
                 if ($percent<80) $percent_class = 'bg-yellow-300';
                 if ($percent<40) $percent_class = 'bg-red-600 text-white';
             @endphp
-            <div class="flex mx-5 space-x-2">
+            <div class="flex flex-col mx-5 space-y-3 relative">
                 <x-tooltip.absolute-bottom class="px-2 {{ $percent_class }}">
                     x-tooltip.absolute-bottom slot
                     <x-slot name='tooltip'>
@@ -207,7 +224,24 @@
                 </x-tooltip.bottom-translate-x>    
             </div> 
         </div>
-
+        <!-- 
+        ----------------------Marker------------------------------
+        -->
+        <div>
+            <x-head.h2 class="ml-5 mt-5">Marker</x-head.h2>
+            <div class="flex space-x-2">
+            @php
+                $markers=array('Roles','Tasks','Users','Default')
+            @endphp
+            @foreach ($markers as $marker)
+                <x-marker.role :name="$marker" />                
+            @endforeach
+            </div>
+            <div class="flex space-x-2 mt-3">
+                <x-marker.check :value="$markerCheck" type="form" wire:click="checkMarker"  /> x-marker.check
+            </div>
+        </div>
+    </div>
 <!-- 
 ----------------------Table------------------------------
 -->

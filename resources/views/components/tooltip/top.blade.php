@@ -10,7 +10,7 @@ $translateY = [
 
 @endphp
 
-<div  {{ $attributes->merge(['class'=>'overflow-y-auto z-50 cursor-pointer dark:text-gray-300']) }}
+<div  {{ $attributes->merge(['class'=>'overflow-y-auto z-[100] cursor-pointer dark:text-gray-300']) }}
     x-data="{ tooltip: false }" 
     x-on:mouseover="tooltip = true" 
     x-on:mouseleave="tooltip = false">
